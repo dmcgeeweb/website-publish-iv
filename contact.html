@@ -545,4 +545,58 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--copper); outlin
 </script>
 
 
+
+<!-- ── n8n AI Chat Widget ──────────────────────── -->
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<style>
+  :root {
+    --chat--color-primary: #0F1D30;
+    --chat--color-primary-shade-50: #0a1522;
+    --chat--color-primary-shade-100: #071019;
+    --chat--color-secondary: #B07535;
+    --chat--color-secondary-shade-50: #8F5E28;
+    --chat--color-white: #F6F4EF;
+    --chat--color-light: #F6F4EF;
+    --chat--color-medium: #D9D5C9;
+    --chat--color-dark: #0F1D30;
+    --chat--border-radius: 3px;
+    --chat--toggle--background: #0F1D30;
+    --chat--toggle--hover--background: #B07535;
+    --chat--toggle--active--background: #B07535;
+    --chat--toggle--color: #F6F4EF;
+    --chat--header--background: #0F1D30;
+    --chat--header--color: #F6F4EF;
+    --chat--message--bot--background: #FFFFFF;
+    --chat--message--bot--color: #0F1D30;
+    --chat--message--user--background: #B07535;
+    --chat--message--user--color: #FFFFFF;
+    --chat--message--font-size: 0.95rem;
+    --chat--heading--font-size: 1.15rem;
+  }
+  .chat-layout, .chat-window, .chat-message {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+</style>
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+  createChat({
+    webhookUrl: 'https://mcgeeweb.app.n8n.cloud/webhook/f59e2e19-d066-4092-b936-af80bc834fb6/chat',
+    loadPreviousSession: false,
+    initialMessages: [
+      'Hi there 👋',
+      'Ask me anything about websites, pricing, or how we can help your business.'
+    ],
+    i18n: {
+      en: {
+        title: 'McGee Web Solutions',
+        subtitle: 'Usually replies instantly',
+        inputPlaceholder: 'Type your question...',
+        getStarted: 'New conversation',
+        footer: ''
+      }
+    }
+  });
+</script>
+
 </body></html>
